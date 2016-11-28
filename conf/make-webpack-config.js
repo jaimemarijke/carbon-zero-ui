@@ -98,7 +98,6 @@ module.exports = options => {
                 template: './conf/tmpl.html',
                 production: true,
             }),
-            'react-hot-loader/babel',
         ] : [
             new ExtractTextPlugin('app.[hash].css'),
             new HtmlWebpackPlugin({
