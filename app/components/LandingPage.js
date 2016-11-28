@@ -3,10 +3,13 @@ import styles from './LandingPage.scss';
 
 const LandingPage = () => (
     <div className={styles.banner}>
-        <div className={styles.headline}> Zero your carbon impact. </div>
+        <div className={styles.headline}> <b>Zero</b> your carbon impact. </div>
         <div>
             <div className={styles.totalFootprint}>
-                <div className={styles.datum}> <b>20</b> tons CO<sub>2</sub>e<sup>*</sup></div>
+                <div className={styles.datum}>
+                    <div className={styles.number}>20</div>
+                    <div style={{display: 'inline'}}> tons CO<sub>2</sub>e<sup>*</sup></div>
+                </div>
                 <div className={styles.tagline}> (average US carbon footprint)</div>
             </div>
             <button className={styles.button}> Zero me </button>
