@@ -6,7 +6,10 @@ import {
     Router,
     browserHistory,
 } from 'react-router';
-import LandingPage from './components/LandingPage.jsx';
+import {applyMiddleware, createStore} from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import LandingPage from './components/LandingPage';
+import '../scss/global.scss';
 
 
 const SiteRouter = () => (
@@ -15,8 +18,11 @@ const SiteRouter = () => (
     </Router>
 );
 
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
+const store = createStoreWithMiddleware(() => {}, {}, window.devToolsExtension && window.devToolsExtension());
+
 const App = (
-  <Provider>
+  <Provider store={store}>
     <SiteRouter />
   </Provider>
 );
