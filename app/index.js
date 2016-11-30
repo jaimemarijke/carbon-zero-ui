@@ -9,12 +9,14 @@ import {
 import {applyMiddleware, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import LandingPage from './components/LandingPage';
+import Calculator from './components/Calculator';
 import '../scss/global.scss';
 
 
 const SiteRouter = () => (
     <Router history={browserHistory}>
         <Route path="/" component={LandingPage} />
+        <Route path="/calculate" component={Calculator} />
     </Router>
 );
 
